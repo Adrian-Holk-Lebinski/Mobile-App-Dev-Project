@@ -7,20 +7,28 @@
 </ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <!-- Header/Title -->
   <ion-header>
     <ion-toolbar>
       <ion-title>
-        Home
+        News
       </ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-scroll direction="x">
+    <!-- <div id="container"> -->
+    <ion-card *ngFor="let news of newsList">
+      <ion-card-header>
+        <ion-card-title>{{news.title}}</ion-card-title>
+        <ion-card-subtitle>by {{news.author}}</ion-card-subtitle>
+      </ion-card-header>
 
-  <!-- Home page content -->
-  
+      <ion-card-content>
+        {{news.description}}
+      </ion-card-content>
+    </ion-card>
+    <!-- </div> -->
+  </ion-scroll>
 </ion-content>
-
-<!-- FOOTER FOR PAGE (STAYS THE SAME FOR EACH PAGE) -->
 <ion-footer collapse="fade">
   <ion-toolbar>
     <ion-tabs>
