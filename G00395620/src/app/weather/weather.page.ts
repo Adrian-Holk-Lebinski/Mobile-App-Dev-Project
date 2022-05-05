@@ -11,7 +11,8 @@ export class WeatherPage implements OnInit {
 
   ngOnInit():void{
     this.service.GetWeatherInfo().subscribe((data)=>{
-      this.weatherList = data.data;
+        this.weatherList = data.data.webThreeDayForecast.stations
+        console.log(this.weatherList);
     })
   }
 

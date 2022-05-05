@@ -4,9 +4,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+  <ion-content>
+    <ion-slides pager="true" [options]="slideOpts">
+      <ion-slide *ngFor = "let weather of weatherList">
+        <h1>{{weather.location}}</h1>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>
 
-  <ul *ngFor = "let weather of weatherList">
-      <li>{{weather.location}}e</li>
-  </ul>
-</ion-content>
+  <!-- FOOTER FOR PAGE (STAYS THE SAME FOR EACH PAGE) -->
+<ion-footer collapse="fade">
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button href="../home">
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button href="../news"> 
+          <ion-icon name="newspaper-outline"></ion-icon>
+          <ion-label>News</ion-label>
+        </ion-tab-button>
+  
+        <ion-tab-button href="../weather">
+          <ion-icon name="cloud-outline"></ion-icon>
+          <ion-label>Weather</ion-label>
+        </ion-tab-button>
+        
+        <ion-tab-button href="../music">
+          <ion-icon name="musical-notes-outline"></ion-icon>
+          <ion-label>Music</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>

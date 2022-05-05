@@ -13,5 +13,4 @@ ngOnInit():void{
     this.newsList = data.articles;
   })
 }
-
 }
