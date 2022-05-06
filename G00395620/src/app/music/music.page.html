@@ -1,11 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>music</ion-title>
+    <ion-title>Music</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content [fullscreen]="true">
+  <ion-scroll direction="x">
+    <!-- <div id="container"> -->
+    <ion-card *ngFor="let song of musicList">
+      <ion-card-header>
+        <ion-card-title>{{song.track.name}}</ion-card-title>
+        <ion-card-subtitle>popularity: {{song.track.popularity}}/100</ion-card-subtitle>
+      </ion-card-header>
+    </ion-card>
+    <!-- </div> -->
+  </ion-scroll>
 </ion-content>
 
 <!-- FOOTER FOR PAGE (STAYS THE SAME FOR EACH PAGE) -->

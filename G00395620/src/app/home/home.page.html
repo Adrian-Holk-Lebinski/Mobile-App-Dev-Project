@@ -1,31 +1,30 @@
-<!-- <ion-header>
+<!-- Header/Title -->
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      News
+      Home
     </ion-title>
   </ion-toolbar>
-</ion-header> -->
-
-<ion-content [fullscreen]="true">
-  <!-- Header/Title -->
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>
-        Home
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+</ion-header>
 
   <!-- Home page content -->
-  
-  
+<ion-content [fullscreen]="true">
+  <h3 style="text-align:right;margin-right:5px;">{{date}}</h3>
+  <h1>{{time}}</h1>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p style="margin: 0px 40px;">
+    Welcome! You can check the news, top music and the weather forecast by navigating the toolbar on the bottom of the screen
+  </p>
 </ion-content>
 
 <!-- FOOTER FOR PAGE (STAYS THE SAME FOR EACH PAGE) -->
 <ion-footer collapse="fade">
   <ion-toolbar>
     <ion-tabs>
-      <ion-tab-bar slot="bottom">
+      <ion-tab-bar slot="bottom"> 
         <ion-tab-button href="../home">
           <ion-icon name="home-outline"></ion-icon>
           <ion-label>Home</ion-label>

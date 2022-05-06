@@ -1,13 +1,24 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>weather</ion-title>
+    <ion-title>Weather</ion-title>
   </ion-toolbar>
 </ion-header>
 
   <ion-content>
     <ion-slides pager="true" [options]="slideOpts">
-      <ion-slide *ngFor = "let weather of weatherList">
-        <h1>{{weather.location}}</h1>
+      <ion-slide *ngFor="let day of galway">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{day.date}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <br>
+            <h2>Weather: {{day.weather_text}}</h2>
+            <br>
+            <h2>Minimum Temperature: {{day.min_temp}}</h2>
+            <h2>Maximum Temperature: {{day.max_temp}}</h2>
+          </ion-card-content>
+        </ion-card>
       </ion-slide>
     </ion-slides>
   </ion-content>

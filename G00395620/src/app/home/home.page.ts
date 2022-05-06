@@ -1,16 +1,23 @@
 import { Component } from '@angular/core';
-import { NewsServiceService } from '../Service/news-service.service';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-newsList: any[] = [];
-constructor(private service: NewsServiceService){}
-ngOnInit():void{
-  this.service.GetNewsInfo().subscribe((data)=>{
-    this.newsList = data.articles;
-  })
-}
+  day = new Date();
+  time = this.day.getHours() + ':' + this.day.getMinutes() + ":" + this.day.getSeconds();
+  date:string = this.day.getDay() + '/' + this.day.getMonth() + '/' + this.day.getFullYear();
+  constructor() {
+    this.startTime()
+  } 
+  startTime() {
+    var intervalVar = setInterval(function () {
+      let day = new Date();
+      let time = day.getHours() + ':' + day.getMinutes() + ":" + day.getSeconds();
+
+      this.day = day;
+      this.time = time;
+    }.bind(this), 500)
+  }
 }
